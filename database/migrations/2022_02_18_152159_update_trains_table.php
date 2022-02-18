@@ -15,6 +15,7 @@ class UpdateTrainsTable extends Migration
     {
         Schema::table('trains', function (Blueprint $table) {
             $table->string('train_code', 20)->change();
+            $table->string('company', 200);
         });
     }
 
@@ -26,7 +27,7 @@ class UpdateTrainsTable extends Migration
     public function down()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->dropColumn('train_code');
+            $table->dropColumn('company');
         });
     }
 }
