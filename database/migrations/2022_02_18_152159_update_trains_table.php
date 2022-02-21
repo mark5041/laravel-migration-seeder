@@ -15,6 +15,8 @@ class UpdateTrainsTable extends Migration
     {
         Schema::table('trains', function (Blueprint $table) {
             $table->string('train_code', 20)->change();
+            $table->boolean('in_time')->change();
+            $table->boolean('cancelled')->change();
             $table->string('company', 200)->after('id');
         });
     }
