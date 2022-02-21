@@ -15,7 +15,14 @@
                 <span>Orario di arrivo previsto: {{ $element->arrive_time }}</span>
                 <span>Carrozze: {{ $element->carriage }}</span>
                 <span>Ritardo previsto: {{ $element->in_time }}</span>
-                <span>Stato corsa: {{ $element->cancelled }}</span>
+                <span>Stato corsa: 
+                    @php
+                        if($element->cancelled == 0)
+                            echo "Confermato";
+                        else
+                            echo "Cancellato";
+                    @endphp
+                </span>
             </div>
         </div>
         @endforeach
