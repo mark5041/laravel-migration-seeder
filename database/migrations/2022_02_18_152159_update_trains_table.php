@@ -18,6 +18,7 @@ class UpdateTrainsTable extends Migration
             $table->boolean('in_time')->change();
             $table->boolean('cancelled')->change();
             $table->string('company', 200)->after('id');
+            $table->timestamps();
         });
     }
 
